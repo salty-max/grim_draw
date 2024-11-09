@@ -29,6 +29,8 @@ window/stretch/mode="viewport"
 [global_group]
 
 ui_layer=""
+player=""
+enemies=""
 
 [input]
 
