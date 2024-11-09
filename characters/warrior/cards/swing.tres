@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ut7grgbpeeb2"]
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://ut7grgbpeeb2"]
 
+[ext_resource type="Texture2D" uid="uid://dgk7ai1ls7s6b" path="res://assets/tile_0119.png" id="1_0s0lt"]
 [ext_resource type="Script" path="res://resources/card.gd" id="1_6xjld"]
 
 [resource]
@@ -7,3 +8,7 @@ script = ExtResource("1_6xjld")
 id = "swing"
 type = 0
 target = 1
+archetype = 1
+cost = 1
+icon = ExtResource("1_0s0lt")
+tooltip_text = ""

@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://djjekcshlouv5"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://djjekcshlouv5"]
 
+[ext_resource type="StyleBox" uid="uid://bdrgtqhncf26f" path="res://scenes/ui/mana_ui_stylebox.tres" id="1_0fe14"]
 [ext_resource type="FontFile" uid="uid://bjjibkt62l75m" path="res://assets/pixel_rpg.ttf" id="1_hg27u"]
 
 [resource]
 default_font = ExtResource("1_hg27u")
 default_font_size = 6
+Panel/styles/panel = ExtResource("1_0fe14")

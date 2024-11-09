@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dllegvfcxlys6"]
+
+[ext_resource type="Script" path="res://globals/cards/strike.gd" id="1_efyqt"]
+[ext_resource type="Texture2D" uid="uid://cjqkb8lufk8pc" path="res://assets/tile_0104.png" id="1_nkp8b"]
+
+[resource]
+script = ExtResource("1_efyqt")
+id = "strike"
+type = 0
+target = 1
+archetype = 0
+cost = 1
+icon = ExtResource("1_nkp8b")
+tooltip_text = ""

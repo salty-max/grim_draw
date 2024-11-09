@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bppw4mcesfhq7"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bppw4mcesfhq7"]
 
-[ext_resource type="Script" path="res://resources/card.gd" id="1_n87h6"]
+[ext_resource type="Script" path="res://characters/warrior/cards/shield_block.gd" id="1_ue8sj"]
+[ext_resource type="Texture2D" uid="uid://cr8cn54xi0dj2" path="res://assets/tile_0102.png" id="1_vyhuh"]
 
 [resource]
-script = ExtResource("1_n87h6")
+script = ExtResource("1_ue8sj")
 id = "shield_block"
 type = 1
 target = 0
+archetype = 1
+cost = 1
+icon = ExtResource("1_vyhuh")
+tooltip_text = ""
