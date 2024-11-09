@@ -14,6 +14,10 @@ config/name="Grim Draw"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Events="*res://globals/events.gd"
+
 [display]
 
 window/size/viewport_width=256
@@ -43,6 +47,7 @@ rmb={
 
 2d_physics/layer_1="card_target_selector"
 2d_physics/layer_2="card_drop_area"
+2d_physics/layer_3="enemies"
 
 [rendering]
 

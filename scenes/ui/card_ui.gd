@@ -2,14 +2,21 @@ class_name CardUI extends Control
 
 signal reparent_requested(which_card_ui: CardUI)
 
+@export var card: Card
+
 @onready var color: ColorRect = $Color
+@onready var title: Label = $Title
 @onready var state: Label = $State
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var targets: Array[Node] = []
 
+var parent: Control
+var tween: Tween
+
 
 func _ready() -> void:
+	title.text = card.id
 	card_state_machine.init(self)
 	
 	
@@ -36,3 +43,8 @@ func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 
 func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
+	
+
+func animate_to_position(new_position: Vector2, duration: float) -> void:
+	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position", new_position, duration)

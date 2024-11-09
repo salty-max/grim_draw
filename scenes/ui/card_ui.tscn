@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://duluvvo7e0dyk"]
+[gd_scene load_steps=10 format=3 uid="uid://duluvvo7e0dyk"]
 
 [ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="1_q4025"]
 [ext_resource type="Script" path="res://scenes/ui/card_ui.gd" id="2_6yvpf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_clicked_state.gd" id="5_4bdhh"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_dragging_state.gd" id="6_co8je"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_released_state.gd" id="7_nv3d0"]
+[ext_resource type="Script" path="res://scenes/ui/card_states/card_aiming_state.gd" id="8_dnkpn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwihq"]
 size = Vector2(25, 30)
@@ -34,13 +35,33 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.136064, 0.349664, 0.267034, 1)
 
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -3.0
+offset_right = 3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "id"
+
 [node name="State" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -6.0
+offset_right = 9.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 text = "state"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -71,6 +92,10 @@ state = 2
 [node name="CardReleasedState" type="Node" parent="CardStateMachine"]
 script = ExtResource("7_nv3d0")
 state = 4
+
+[node name="CardAimingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_dnkpn")
+state = 3
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
