@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("1_ue8sj")
 id = "shield_block"
+name = "Shield Block"
 type = 1
 target = 0
 archetype = 1
 cost = 1
 icon = ExtResource("1_vyhuh")
-tooltip_text = ""
+tooltip_text = "Gain [color=\"#0000ff\"]5[/color] block"

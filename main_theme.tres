@@ -1,9 +1,21 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://djjekcshlouv5"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://djjekcshlouv5"]
 
-[ext_resource type="StyleBox" uid="uid://bdrgtqhncf26f" path="res://scenes/ui/mana_ui_stylebox.tres" id="1_0fe14"]
+[ext_resource type="StyleBox" uid="uid://bfagq4eqyk1j3" path="res://scenes/ui/ui_button_hover.tres" id="1_gh744"]
 [ext_resource type="FontFile" uid="uid://bjjibkt62l75m" path="res://assets/pixel_rpg.ttf" id="1_hg27u"]
+[ext_resource type="StyleBox" uid="uid://27ydt34qx7l1" path="res://scenes/ui/ui_button_disabled.tres" id="1_q2iao"]
+[ext_resource type="StyleBox" uid="uid://coapva6nkuofi" path="res://scenes/ui/ui_button.tres" id="2_bgvpl"]
+[ext_resource type="StyleBox" uid="uid://bdrgtqhncf26f" path="res://scenes/ui/ui_panel_stylebox.tres" id="2_sh424"]
+[ext_resource type="StyleBox" uid="uid://y7ae4fhag4sa" path="res://scenes/ui/ui_button_pressed.tres" id="4_8rk57"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jrms1"]
 
 [resource]
 default_font = ExtResource("1_hg27u")
 default_font_size = 6
-Panel/styles/panel = ExtResource("1_0fe14")
+Button/styles/disabled = ExtResource("1_q2iao")
+Button/styles/focus = SubResource("StyleBoxEmpty_jrms1")
+Button/styles/hover = ExtResource("1_gh744")
+Button/styles/normal = ExtResource("2_bgvpl")
+Button/styles/pressed = ExtResource("4_8rk57")
+Panel/styles/panel = ExtResource("2_sh424")
+PanelContainer/styles/panel = ExtResource("2_sh424")
