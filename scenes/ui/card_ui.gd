@@ -15,8 +15,8 @@ const DRAGGING_STYLEBOX := preload("res://scenes/ui/card_dragging_stylebox.tres"
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var targets: Array[Node] = []
-@onready var original_index := self.get_index()
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var is_playable := true : set = _set_is_playable
