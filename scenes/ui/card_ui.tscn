@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scenes/ui/card_state_machine.gd" id="3_0p5th"]
 [ext_resource type="StyleBox" uid="uid://bhm4bbvvx2st" path="res://scenes/ui/card_base_stylebox.tres" id="3_xw0ff"]
 [ext_resource type="Script" path="res://scenes/ui/card_base_state.gd" id="4_2i7bx"]
-[ext_resource type="Texture2D" uid="uid://dxipju74c1pm5" path="res://assets/tile_0103.png" id="4_kcp0n"]
+[ext_resource type="Texture2D" uid="uid://cn0yktnu82r82" path="res://globals/cards/strike.png" id="4_qrcgd"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_clicked_state.gd" id="5_4bdhh"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_dragging_state.gd" id="6_co8je"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_released_state.gd" id="7_nv3d0"]
@@ -39,27 +39,29 @@ theme_override_styles/panel = ExtResource("3_xw0ff")
 
 [node name="Cost" type="Label" parent="."]
 layout_mode = 0
-offset_right = 10.0
-offset_bottom = 10.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 11.0
+offset_bottom = 11.0
 text = "2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -6.0
-offset_top = -6.0
-offset_right = 4.0
-offset_bottom = 4.0
+anchor_bottom = 1.0
+offset_left = -7.5
+offset_top = -21.0
+offset_right = 8.5
+offset_bottom = -5.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 mouse_filter = 2
-texture = ExtResource("4_kcp0n")
+texture = ExtResource("4_qrcgd")
 expand_mode = 1
 stretch_mode = 5
 

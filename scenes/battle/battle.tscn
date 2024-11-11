@@ -1,18 +1,82 @@
-[gd_scene load_steps=15 format=3 uid="uid://dcuokahbtgv2q"]
+[gd_scene load_steps=19 format=4 uid="uid://dcuokahbtgv2q"]
 
 [ext_resource type="Texture2D" uid="uid://d0cl8y4xp8dvy" path="res://assets/background.png" id="1_0nbbi"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_1871v"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_gpkjp"]
 [ext_resource type="PackedScene" uid="uid://ctibdvw0g8v4t" path="res://scenes/player/player.tscn" id="2_mabr0"]
+[ext_resource type="Texture2D" uid="uid://dkaxe4dbjcsjc" path="res://assets/oryx_16bit_background_trans.png" id="3_2rqku"]
 [ext_resource type="Resource" uid="uid://cia62ldqhhw1a" path="res://characters/warrior/warrior.tres" id="3_cghux"]
 [ext_resource type="PackedScene" uid="uid://dmhpet7itsxam" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_ebp28"]
 [ext_resource type="PackedScene" uid="uid://ckndt3gkbtprv" path="res://scenes/enemy/enemy.tscn" id="4_piwfw"]
-[ext_resource type="Resource" uid="uid://djumotfydw8jk" path="res://enemies/crab/test_enemy.tres" id="5_2ahxk"]
+[ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="5_otibg"]
+[ext_resource type="Resource" uid="uid://v5jnvn7wwn37" path="res://enemies/scorpion/scorpion.tres" id="6_3pwmp"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_tuljg"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_puw4k"]
 [ext_resource type="PackedScene" uid="uid://mss1g2i3g6sc" path="res://scenes/ui/mana_ui.tscn" id="12_u246f"]
 [ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="13_cbptx"]
 [ext_resource type="PackedScene" uid="uid://dkjwgxie263mx" path="res://scenes/ui/tooltip.tscn" id="13_lrhde"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj701"]
+texture = ExtResource("3_2rqku")
+texture_region_size = Vector2i(64, 56)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+0:9/0 = 0
+0:10/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+1:5/0 = 0
+1:6/0 = 0
+1:7/0 = 0
+1:8/0 = 0
+1:9/0 = 0
+1:10/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+2:3/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+2:6/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+2:9/0 = 0
+2:10/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+3:2/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+3:5/0 = 0
+3:6/0 = 0
+3:7/0 = 0
+3:8/0 = 0
+3:9/0 = 0
+3:10/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+4:4/0 = 0
+4:5/0 = 0
+4:6/0 = 0
+4:7/0 = 0
+4:8/0 = 0
+4:9/0 = 0
+4:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cwspm"]
+sources/0 = SubResource("TileSetAtlasSource_bj701")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faksi"]
 size = Vector2(256, 100)
@@ -22,7 +86,12 @@ script = ExtResource("1_1871v")
 char_stats = ExtResource("3_cghux")
 metadata/_edit_lock_ = true
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD3//b/AAADAAkAAAAIAAAAAAACAAkAAAAFAAAAAAABAAkAAAABAAAAAAADAAgAAAAMAAAAAAADAAgAAAAQAAAAAAABAAgAAAA=")
+tile_set = SubResource("TileSet_cwspm")
+
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.489622, 0.489622, 0.489622, 1)
 texture = ExtResource("1_0nbbi")
 centered = false
@@ -36,15 +105,14 @@ shape = SubResource("RectangleShape2D_faksi")
 debug_color = Color(0, 0.6, 0.701961, 0.117647)
 
 [node name="Player" parent="." instance=ExtResource("2_mabr0")]
-position = Vector2(43, 74)
+position = Vector2(43, 66)
 
-[node name="Enemy" parent="." instance=ExtResource("4_piwfw")]
-position = Vector2(196, 91)
-stats = ExtResource("5_2ahxk")
+[node name="EnemyHandler" type="Node2D" parent="."]
+script = ExtResource("5_otibg")
 
-[node name="Enemy2" parent="." instance=ExtResource("4_piwfw")]
-position = Vector2(196, 61)
-stats = ExtResource("5_2ahxk")
+[node name="Enemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
+position = Vector2(196, 67)
+stats = ExtResource("6_3pwmp")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_ebp28")]
 
@@ -76,7 +144,7 @@ script = ExtResource("2_gpkjp")
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("13_lrhde")]
 offset_top = 4.0
-offset_bottom = 40.0
+offset_bottom = 52.0
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true

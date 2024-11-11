@@ -5,7 +5,7 @@ signal stats_changed
 const MAX_BLOCK := 999
 
 @export var max_health := 1
-@export var art: Texture
+@export var art: SpriteFrames
 
 var health: int: set = set_health
 var block: int :set = set_block

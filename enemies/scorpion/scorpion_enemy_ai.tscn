@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://do30nbkvacegs"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_4gqgi"]
+[ext_resource type="Script" path="res://enemies/scorpion/attack_action.gd" id="2_eho4l"]
+[ext_resource type="Script" path="res://enemies/scorpion/block_action.gd" id="3_hrc1q"]
+[ext_resource type="Script" path="res://enemies/scorpion/mega_block_action.gd" id="4_asra3"]
+
+[node name="CrabEnemyAI" type="Node"]
+script = ExtResource("1_4gqgi")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_eho4l")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_hrc1q")
+type = 1
+chance_weight = 1.0
+
+[node name="MegaBlockAction" type="Node" parent="."]
+script = ExtResource("4_asra3")

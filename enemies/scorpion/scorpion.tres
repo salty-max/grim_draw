@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://v5jnvn7wwn37"]
+
+[ext_resource type="PackedScene" uid="uid://do30nbkvacegs" path="res://enemies/scorpion/scorpion_enemy_ai.tscn" id="1_0v1m2"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="1_twlf1"]
+[ext_resource type="SpriteFrames" uid="uid://b2x2cuseux484" path="res://enemies/scorpion/scorpion_sprite_frames.tres" id="2_ptx8u"]
+
+[resource]
+script = ExtResource("1_twlf1")
+ai = ExtResource("1_0v1m2")
+max_health = 10
+art = ExtResource("2_ptx8u")

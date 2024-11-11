@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckndt3gkbtprv"]
+[gd_scene load_steps=7 format=3 uid="uid://ckndt3gkbtprv"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_rvqm2"]
-[ext_resource type="Texture2D" uid="uid://c42kmxy0xdxj" path="res://assets/tile_0110.png" id="2_1wa0j"]
-[ext_resource type="Texture2D" uid="uid://beveircfy4olt" path="res://assets/arrow.png" id="2_bmx7a"]
+[ext_resource type="SpriteFrames" uid="uid://b2x2cuseux484" path="res://enemies/scorpion/scorpion_sprite_frames.tres" id="2_p0dcf"]
+[ext_resource type="Texture2D" uid="uid://d2h1rmgh2vtcb" path="res://assets/lofi_interface.png" id="3_1gu4u"]
 [ext_resource type="PackedScene" uid="uid://ptfcl8340kx0" path="res://scenes/ui/stats_ui.tscn" id="3_n5mk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pos0e"]
+atlas = ExtResource("3_1gu4u")
+region = Rect2(40, 16, 8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr4hg"]
 
@@ -11,21 +15,22 @@
 collision_layer = 4
 script = ExtResource("1_rvqm2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1wa0j")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_p0dcf")
+autoplay = "default"
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(16, 0)
-rotation = -1.5708
-texture = ExtResource("2_bmx7a")
+position = Vector2(22, 0)
+texture = SubResource("AtlasTexture_pos0e")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xr4hg")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_n5mk3")]
-offset_top = 7.0
-offset_bottom = 23.0
+offset_top = 10.0
+offset_bottom = 26.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

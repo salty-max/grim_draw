@@ -23,6 +23,6 @@ func _on_player_hand_drawn() -> void:
 	
 
 func _on_end_turn_button_pressed() -> void:
-	end_turn_button.disabled = false
+	end_turn_button.disabled = true
 	Events.player_turn_ended.emit()
 	

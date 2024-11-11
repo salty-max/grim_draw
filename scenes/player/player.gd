@@ -2,8 +2,12 @@ class_name Player extends Node2D
 
 @export var stats: CharacterStats : set = set_character_stats
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
+
+
+func _ready() -> void:
+	sprite_2d.play("default")
 	
 
 func set_character_stats(value: CharacterStats) -> void:
@@ -21,7 +25,7 @@ func update_player() -> void:
 	if not is_inside_tree():
 		await ready
 
-	sprite_2d.texture = stats.art
+	sprite_2d.sprite_frames = stats.art
 	update_stats()
 
 func update_stats() -> void:
@@ -35,4 +39,7 @@ func take_damage(damage: int) -> void:
 	stats.take_damage(damage)
 	
 	if stats.health <= 0:
+		sprite_2d.play("death")
+		await sprite_2d.animation_finished
+		Events.player_died.emit()
 		queue_free()
