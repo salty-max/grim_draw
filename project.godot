@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Events="*res://globals/events.gd"
 Shaker="*res://globals/shaker.gd"
+MusicPlayer="*res://scenes/audio/music_player.tscn"
 
 [display]
 

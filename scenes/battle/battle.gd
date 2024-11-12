@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var char_stats: CharacterStats
+@export var music_track: AudioStream
 
 @onready var player_handler: PlayerHandler = $PlayerHandler
 @onready var enemy_handler: EnemyHandler = $EnemyHandler
@@ -24,6 +25,7 @@ func _ready() -> void:
 	
 	
 func start_battle(stats: CharacterStats) -> void:
+	MusicPlayer.play(music_track, true)
 	enemy_handler.reset_enemies_action()
 	player_handler.start_battle(stats)
 	
