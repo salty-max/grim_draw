@@ -1,6 +1,5 @@
 [gd_scene load_steps=19 format=4 uid="uid://dcuokahbtgv2q"]
 
-[ext_resource type="Texture2D" uid="uid://d0cl8y4xp8dvy" path="res://assets/background.png" id="1_0nbbi"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_1871v"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_gpkjp"]
 [ext_resource type="PackedScene" uid="uid://ctibdvw0g8v4t" path="res://scenes/player/player.tscn" id="2_mabr0"]
@@ -15,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://mss1g2i3g6sc" path="res://scenes/ui/mana_ui.tscn" id="12_u246f"]
 [ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="13_cbptx"]
 [ext_resource type="PackedScene" uid="uid://dkjwgxie263mx" path="res://scenes/ui/tooltip.tscn" id="13_lrhde"]
+[ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_em4mc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj701"]
 texture = ExtResource("3_2rqku")
@@ -90,12 +90,6 @@ metadata/_edit_lock_ = true
 tile_map_data = PackedByteArray("AAD3//b/AAADAAkAAAAIAAAAAAACAAkAAAAFAAAAAAABAAkAAAABAAAAAAADAAgAAAAMAAAAAAADAAgAAAAQAAAAAAABAAgAAAA=")
 tile_set = SubResource("TileSet_cwspm")
 
-[node name="Background" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.489622, 0.489622, 0.489622, 1)
-texture = ExtResource("1_0nbbi")
-centered = false
-
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
 
@@ -139,12 +133,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 alignment = 1
 script = ExtResource("2_gpkjp")
+metadata/_edit_use_anchors_ = true
 
 [node name="ManaUI" parent="BattleUI" instance=ExtResource("12_u246f")]
+metadata/_edit_use_anchors_ = true
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("13_lrhde")]
 offset_top = 4.0
 offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EndTurnButton" type="Button" parent="BattleUI"]
 unique_name_in_owner = true
@@ -161,3 +158,21 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("13_cbptx")
 text = "End Turn"
+metadata/_edit_use_anchors_ = true
+
+[node name="RedFlash" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("15_em4mc")
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.443137, 0.443137, 0)
+
+[node name="Timer" type="Timer" parent="RedFlash"]
+wait_time = 0.1
+one_shot = true

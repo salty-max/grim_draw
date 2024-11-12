@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://epu0orwbpanq"]
+
+[ext_resource type="Texture2D" uid="uid://c7kw1i37uopr6" path="res://assets/lofi_obj.png" id="1_dt1dd"]
+[ext_resource type="Script" path="res://scenes/ui/intent_ui.gd" id="1_wqscf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s08q"]
+atlas = ExtResource("1_dt1dd")
+region = Rect2(40, 24, 8, 8)
+
+[node name="IntentUI" type="HBoxContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 14.0
+grow_horizontal = 2
+theme_override_constants/separation = 3
+alignment = 1
+script = ExtResource("1_wqscf")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = SubResource("AtlasTexture_6s08q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/outline_size = 1
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1

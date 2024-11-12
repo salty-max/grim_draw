@@ -21,12 +21,13 @@ offset_right = 45.0
 offset_bottom = 16.0
 grow_horizontal = 2
 theme = ExtResource("1_bocxm")
+theme_override_constants/separation = 3
 alignment = 1
 script = ExtResource("2_serxo")
 
 [node name="Block" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 3
 
 [node name="BlockIcon" type="TextureRect" parent="Block"]
 custom_minimum_size = Vector2(8, 8)
@@ -39,6 +40,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_constants/outline_size = 1
 text = "6
 "
 horizontal_alignment = 1
@@ -46,7 +48,7 @@ vertical_alignment = 1
 
 [node name="Health" type="HBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 3
 alignment = 2
 
 [node name="HealthIcon" type="TextureRect" parent="Health"]
@@ -60,6 +62,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_constants/outline_size = 1
 text = "10
 "
 horizontal_alignment = 1

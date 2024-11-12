@@ -1,9 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://do30nbkvacegs"]
+[gd_scene load_steps=13 format=3 uid="uid://do30nbkvacegs"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_4gqgi"]
 [ext_resource type="Script" path="res://enemies/scorpion/attack_action.gd" id="2_eho4l"]
 [ext_resource type="Script" path="res://enemies/scorpion/block_action.gd" id="3_hrc1q"]
+[ext_resource type="Texture2D" uid="uid://c7kw1i37uopr6" path="res://assets/lofi_obj.png" id="3_lrc0g"]
+[ext_resource type="Script" path="res://resources/intent.gd" id="4_8jvv4"]
 [ext_resource type="Script" path="res://enemies/scorpion/mega_block_action.gd" id="4_asra3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mclbk"]
+atlas = ExtResource("3_lrc0g")
+region = Rect2(40, 24, 8, 8)
+
+[sub_resource type="Resource" id="Resource_snan4"]
+script = ExtResource("4_8jvv4")
+number = "7"
+icon = SubResource("AtlasTexture_mclbk")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk4jb"]
+atlas = ExtResource("3_lrc0g")
+region = Rect2(16, 24, 8, 8)
+
+[sub_resource type="Resource" id="Resource_xrftb"]
+script = ExtResource("4_8jvv4")
+number = ""
+icon = SubResource("AtlasTexture_dk4jb")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlb2w"]
+atlas = ExtResource("3_lrc0g")
+region = Rect2(32, 24, 8, 8)
+
+[sub_resource type="Resource" id="Resource_enrsx"]
+script = ExtResource("4_8jvv4")
+number = ""
+icon = SubResource("AtlasTexture_mlb2w")
 
 [node name="CrabEnemyAI" type="Node"]
 script = ExtResource("1_4gqgi")
@@ -11,12 +40,15 @@ script = ExtResource("1_4gqgi")
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("2_eho4l")
 type = 1
+intent = SubResource("Resource_snan4")
 chance_weight = 1.0
 
 [node name="BlockAction" type="Node" parent="."]
 script = ExtResource("3_hrc1q")
 type = 1
+intent = SubResource("Resource_xrftb")
 chance_weight = 1.0
 
 [node name="MegaBlockAction" type="Node" parent="."]
 script = ExtResource("4_asra3")
+intent = SubResource("Resource_enrsx")
