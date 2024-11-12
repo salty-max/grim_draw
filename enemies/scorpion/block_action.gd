@@ -12,6 +12,7 @@ func perform_action() -> void:
 	var target_array: Array[Node] = [enemy]
 	
 	block_effect.amount = block
+	block_effect.sound = sound
 	
 	tween.tween_property(enemy.sprite_2d, "scale", Vector2(1.2, 1.2), 0.4)
 	tween.tween_callback(block_effect.execute.bind(target_array))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://do30nbkvacegs"]
+[gd_scene load_steps=15 format=3 uid="uid://do30nbkvacegs"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_4gqgi"]
 [ext_resource type="Script" path="res://enemies/scorpion/attack_action.gd" id="2_eho4l"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c7kw1i37uopr6" path="res://assets/lofi_obj.png" id="3_lrc0g"]
 [ext_resource type="Script" path="res://resources/intent.gd" id="4_8jvv4"]
 [ext_resource type="Script" path="res://enemies/scorpion/mega_block_action.gd" id="4_asra3"]
+[ext_resource type="AudioStream" uid="uid://c47w0pnwrexy2" path="res://assets/enemy_attack.ogg" id="5_i0hs6"]
+[ext_resource type="AudioStream" uid="uid://c4wr0x6qo6ti2" path="res://assets/enemy_block.ogg" id="7_bvuqy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mclbk"]
 atlas = ExtResource("3_lrc0g")
@@ -42,13 +44,16 @@ script = ExtResource("2_eho4l")
 type = 1
 intent = SubResource("Resource_snan4")
 chance_weight = 1.0
+sound = ExtResource("5_i0hs6")
 
 [node name="BlockAction" type="Node" parent="."]
 script = ExtResource("3_hrc1q")
 type = 1
 intent = SubResource("Resource_xrftb")
 chance_weight = 1.0
+sound = ExtResource("7_bvuqy")
 
 [node name="MegaBlockAction" type="Node" parent="."]
 script = ExtResource("4_asra3")
 intent = SubResource("Resource_enrsx")
+sound = ExtResource("7_bvuqy")
