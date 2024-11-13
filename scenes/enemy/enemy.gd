@@ -14,10 +14,6 @@ var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
 
 
-func _ready() -> void:
-	sprite_2d.play("default")
-
-
 func set_enemy_stats(value: EnemyStats) -> void:
 	stats = value.create_instance()
 	
@@ -64,6 +60,7 @@ func update_enemy() -> void:
 		await ready
 		
 	sprite_2d.sprite_frames = stats.art
+	print(sprite_2d.sprite_frames, stats.art)
 	arrow.position = Vector2.RIGHT * ARROW_OFFSET
 	setup_ai()
 	update_stats()

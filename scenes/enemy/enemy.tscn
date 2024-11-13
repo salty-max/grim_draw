@@ -34,8 +34,8 @@ offset_top = 10.0
 offset_bottom = 26.0
 
 [node name="IntentUI" parent="." instance=ExtResource("5_xmi4r")]
-offset_top = -27.0
-offset_bottom = -13.0
+offset_top = -25.0
+offset_bottom = -11.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

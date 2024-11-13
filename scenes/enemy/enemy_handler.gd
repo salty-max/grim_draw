@@ -3,6 +3,10 @@ class_name EnemyHandler extends Node2D
 
 func _ready() -> void:
 	Events.enemy_action_completed.connect(_on_enemy_action_completed)
+	var enemy: Enemy
+	for child in get_children():
+		enemy = child as Enemy
+		enemy.sprite_2d.play("default")
 	
 	
 func reset_enemies_action() -> void:

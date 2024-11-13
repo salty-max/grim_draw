@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://0ws8xvyr78vq" path="res://assets/oryx_16bit_fantasy_creatures_trans.png" id="1_wjs24"]
 [ext_resource type="Texture2D" uid="uid://c40501a6y0iun" path="res://assets/oryx_16bit_fantasy_fx_trans.png" id="2_3tslw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aslwt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhdux"]
 atlas = ExtResource("2_3tslw")
-region = Rect2(416, 352, 32, 32)
+region = Rect2(352, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xw6j6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut5u1"]
 atlas = ExtResource("2_3tslw")
-region = Rect2(448, 352, 32, 32)
+region = Rect2(384, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0jji"]
 atlas = ExtResource("1_wjs24")
@@ -23,10 +23,10 @@ region = Rect2(24, 48, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aslwt")
+"texture": SubResource("AtlasTexture_jhdux")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xw6j6")
+"texture": SubResource("AtlasTexture_ut5u1")
 }],
 "loop": false,
 "name": &"death",

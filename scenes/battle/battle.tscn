@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dcuokahbtgv2q"]
+[gd_scene load_steps=23 format=4 uid="uid://dcuokahbtgv2q"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_1871v"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_gpkjp"]
@@ -12,10 +12,13 @@
 [ext_resource type="Resource" uid="uid://v5jnvn7wwn37" path="res://enemies/scorpion/scorpion.tres" id="6_3pwmp"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_tuljg"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_puw4k"]
+[ext_resource type="Resource" uid="uid://ceafmix0gnm2y" path="res://enemies/bat/bat.tres" id="9_w4cg2"]
 [ext_resource type="PackedScene" uid="uid://mss1g2i3g6sc" path="res://scenes/ui/mana_ui.tscn" id="12_u246f"]
 [ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="13_cbptx"]
 [ext_resource type="PackedScene" uid="uid://dkjwgxie263mx" path="res://scenes/ui/tooltip.tscn" id="13_lrhde"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_em4mc"]
+[ext_resource type="PackedScene" uid="uid://yrp2ldqqqf8h" path="res://scenes/ui/battle_over_panel.tscn" id="17_bfdud"]
+[ext_resource type="AudioStream" uid="uid://bxvvf6vwv66xo" path="res://assets/8_bit_iced_village_lofi.mp3" id="18_ln2po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj701"]
 texture = ExtResource("3_2rqku")
@@ -101,13 +104,21 @@ shape = SubResource("RectangleShape2D_faksi")
 debug_color = Color(0, 0.6, 0.701961, 0.117647)
 
 [node name="Player" parent="." instance=ExtResource("2_mabr0")]
-position = Vector2(43, 66)
+position = Vector2(43, 58)
 
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("5_otibg")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
-position = Vector2(196, 67)
+[node name="BatEnemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
+position = Vector2(134, 58)
+stats = ExtResource("9_w4cg2")
+
+[node name="BatEnemy2" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
+position = Vector2(180, 58)
+stats = ExtResource("9_w4cg2")
+
+[node name="ScorpionEnemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
+position = Vector2(226, 58)
 stats = ExtResource("6_3pwmp")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_ebp28")]
@@ -141,6 +152,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("13_lrhde")]
+visible = false
 offset_top = 4.0
 offset_bottom = 52.0
 metadata/_edit_use_anchors_ = true
@@ -178,3 +190,10 @@ color = Color(1, 0.443137, 0.443137, 0)
 [node name="Timer" type="Timer" parent="RedFlash"]
 wait_time = 0.1
 one_shot = true
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("17_bfdud")]
+visible = false
+music = ExtResource("18_ln2po")

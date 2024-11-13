@@ -32,7 +32,7 @@ func start_battle(stats: CharacterStats) -> void:
 	
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
-		print("Victory!")	
+		Events.battle_over_screen_requested.emit("You survive... for now!", BattleOverPanel.Type.WIN)
 	
 	
 func _on_enemies_turn_ended() -> void:
@@ -41,4 +41,4 @@ func _on_enemies_turn_ended() -> void:
 	
 	
 func _on_player_died() -> void:
-	print("Game over!")
+	Events.battle_over_screen_requested.emit("Your journey ends here...", BattleOverPanel.Type.LOSE)

@@ -1,0 +1,45 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bt7rxjimckdyj"]
+
+[ext_resource type="Texture2D" uid="uid://c40501a6y0iun" path="res://assets/oryx_16bit_fantasy_fx_trans.png" id="1_fwn2r"]
+[ext_resource type="Texture2D" uid="uid://0ws8xvyr78vq" path="res://assets/oryx_16bit_fantasy_creatures_trans.png" id="2_rle2v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7opff"]
+atlas = ExtResource("1_fwn2r")
+region = Rect2(288, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m71ge"]
+atlas = ExtResource("1_fwn2r")
+region = Rect2(320, 352, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjd5n"]
+atlas = ExtResource("2_rle2v")
+region = Rect2(96, 312, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ybyi"]
+atlas = ExtResource("2_rle2v")
+region = Rect2(96, 336, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7opff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m71ge")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjd5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ybyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

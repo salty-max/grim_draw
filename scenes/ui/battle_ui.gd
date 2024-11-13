@@ -10,6 +10,7 @@ class_name BattleUI extends CanvasLayer
 func _ready() -> void:
 	Events.player_hand_drawn.connect(_on_player_hand_drawn)
 	end_turn_button.pressed.connect(_on_end_turn_button_pressed)
+	Events.battle_over_screen_requested.connect(_on_battle_over_screen_requested)
 
 
 func _set_char_stats(value: CharacterStats) -> void:
@@ -25,4 +26,9 @@ func _on_player_hand_drawn() -> void:
 func _on_end_turn_button_pressed() -> void:
 	end_turn_button.disabled = true
 	Events.player_turn_ended.emit()
+	
+	
+func _on_battle_over_screen_requested(_text: String, _type: BattleOverPanel.Type) -> void:
+	print("coucou")
+	hide()
 	
