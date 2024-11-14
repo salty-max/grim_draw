@@ -1,8 +1,7 @@
-# meta-name: Enemy Action
-# meta-description: An action which can be performed by an enemy during its turn.
-extends EnemyAction
+# meta-name: Card
+# meta-description: An action which will be performed when a card is played.
+extends Card
 
 
-func perform_action() -> void:
-	if not enemy or not target:
-		return
+func perform_action(targets: Array[Node]) -> void:
+	pass

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn0yktnu82r82"
-path="res://.godot/imported/strike.png-f8e80a3362aa331314c2649fd07e6f51.ctex"
+uid="uid://cue8muj1oa8gd"
+path="res://.godot/imported/warrior_shield_wall.png-1079bd330e3fbe9b976a78b3413ad837.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://globals/cards/strike.png"
-dest_files=["res://.godot/imported/strike.png-f8e80a3362aa331314c2649fd07e6f51.ctex"]
+source_file="res://cards/warrior/warrior_shield_wall.png"
+dest_files=["res://.godot/imported/warrior_shield_wall.png-1079bd330e3fbe9b976a78b3413ad837.ctex"]
 
 [params]
 

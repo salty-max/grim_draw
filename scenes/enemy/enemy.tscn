@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckndt3gkbtprv"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_rvqm2"]
-[ext_resource type="SpriteFrames" uid="uid://b2x2cuseux484" path="res://enemies/scorpion/scorpion_sprite_frames.tres" id="2_p0dcf"]
+[ext_resource type="SpriteFrames" uid="uid://b08luy41pqe5g" path="res://enemies/rat/rat_sprite_frames.tres" id="2_phl3v"]
 [ext_resource type="Texture2D" uid="uid://d2h1rmgh2vtcb" path="res://assets/lofi_interface.png" id="3_1gu4u"]
 [ext_resource type="PackedScene" uid="uid://ptfcl8340kx0" path="res://scenes/ui/stats_ui.tscn" id="3_n5mk3"]
 [ext_resource type="PackedScene" uid="uid://epu0orwbpanq" path="res://scenes/ui/intent_ui.tscn" id="5_xmi4r"]
@@ -17,7 +17,7 @@ collision_layer = 4
 script = ExtResource("1_rvqm2")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_p0dcf")
+sprite_frames = ExtResource("2_phl3v")
 autoplay = "default"
 
 [node name="Arrow" type="Sprite2D" parent="."]

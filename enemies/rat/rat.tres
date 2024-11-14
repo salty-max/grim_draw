@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://dt5mm8kp3qsdy"]
+
+[ext_resource type="PackedScene" uid="uid://cwdwaqflf5s6q" path="res://enemies/rat/rat_enemy_ai.tscn" id="1_30wgy"]
+[ext_resource type="SpriteFrames" uid="uid://b08luy41pqe5g" path="res://enemies/rat/rat_sprite_frames.tres" id="1_iiuqf"]
+[ext_resource type="Script" path="res://resources/enemy_stats.gd" id="1_prwly"]
+
+[resource]
+script = ExtResource("1_prwly")
+ai = ExtResource("1_30wgy")
+max_health = 20
+art = ExtResource("1_iiuqf")

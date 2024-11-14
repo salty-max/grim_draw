@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dmhpet7itsxam" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_ebp28"]
 [ext_resource type="PackedScene" uid="uid://ckndt3gkbtprv" path="res://scenes/enemy/enemy.tscn" id="4_piwfw"]
 [ext_resource type="Script" path="res://scenes/enemy/enemy_handler.gd" id="5_otibg"]
-[ext_resource type="Resource" uid="uid://v5jnvn7wwn37" path="res://enemies/scorpion/scorpion.tres" id="6_3pwmp"]
 [ext_resource type="Script" path="res://scenes/ui/battle_ui.gd" id="7_tuljg"]
 [ext_resource type="Script" path="res://scenes/player/player_handler.gd" id="8_puw4k"]
+[ext_resource type="Resource" uid="uid://dt5mm8kp3qsdy" path="res://enemies/rat/rat.tres" id="9_pai42"]
 [ext_resource type="Resource" uid="uid://ceafmix0gnm2y" path="res://enemies/bat/bat.tres" id="9_w4cg2"]
 [ext_resource type="PackedScene" uid="uid://mss1g2i3g6sc" path="res://scenes/ui/mana_ui.tscn" id="12_u246f"]
 [ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="13_cbptx"]
@@ -117,9 +117,9 @@ stats = ExtResource("9_w4cg2")
 position = Vector2(180, 58)
 stats = ExtResource("9_w4cg2")
 
-[node name="ScorpionEnemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
+[node name="RatEnemy" parent="EnemyHandler" instance=ExtResource("4_piwfw")]
 position = Vector2(226, 58)
-stats = ExtResource("6_3pwmp")
+stats = ExtResource("9_pai42")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_ebp28")]
 

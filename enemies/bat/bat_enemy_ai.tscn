@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://d2fmlgfg3ahxb"]
 
 [ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_5yp1a"]
-[ext_resource type="Script" path="res://enemies/bat/attack_action.gd" id="2_ejgro"]
-[ext_resource type="Script" path="res://enemies/bat/block_action.gd" id="3_3f3po"]
+[ext_resource type="Script" path="res://enemies/bat/flip_flap_action.gd" id="2_ejgro"]
+[ext_resource type="Script" path="res://enemies/bat/barrel_roll_action.gd" id="3_3f3po"]
 [ext_resource type="Texture2D" uid="uid://c7kw1i37uopr6" path="res://assets/lofi_obj.png" id="3_xmw0f"]
 [ext_resource type="Script" path="res://resources/intent.gd" id="4_f3dpt"]
 [ext_resource type="AudioStream" uid="uid://c47w0pnwrexy2" path="res://assets/enemy_attack.ogg" id="5_u6g21"]
@@ -29,15 +29,17 @@ icon = SubResource("AtlasTexture_c0urb")
 [node name="BatEnemyAI" type="Node"]
 script = ExtResource("1_5yp1a")
 
-[node name="AttackAction" type="Node" parent="."]
+[node name="FlipFlap" type="Node" parent="."]
 script = ExtResource("2_ejgro")
+action_name = "Flip Flap"
 type = 1
 intent = SubResource("Resource_orxb2")
 chance_weight = 3.0
 sound = ExtResource("5_u6g21")
 
-[node name="BlockAction" type="Node" parent="."]
+[node name="BarrelRoll" type="Node" parent="."]
 script = ExtResource("3_3f3po")
+action_name = "Barrel Roll"
 type = 1
 intent = SubResource("Resource_du2ak")
 chance_weight = 1.0

@@ -29,6 +29,5 @@ func _on_end_turn_button_pressed() -> void:
 	
 	
 func _on_battle_over_screen_requested(_text: String, _type: BattleOverPanel.Type) -> void:
-	print("coucou")
 	hide()
 	

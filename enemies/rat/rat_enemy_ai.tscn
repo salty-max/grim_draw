@@ -1,0 +1,46 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwdwaqflf5s6q"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy_action_picker.gd" id="1_1o4lo"]
+[ext_resource type="Script" path="res://enemies/rat/rat_bite_action.gd" id="2_kp87k"]
+[ext_resource type="Texture2D" uid="uid://c7kw1i37uopr6" path="res://assets/lofi_obj.png" id="3_ailmk"]
+[ext_resource type="Script" path="res://resources/intent.gd" id="4_v8o1x"]
+[ext_resource type="AudioStream" uid="uid://c47w0pnwrexy2" path="res://assets/enemy_attack.ogg" id="5_f3m8i"]
+[ext_resource type="Script" path="res://enemies/rat/rat_scurry_action.gd" id="6_10cmh"]
+[ext_resource type="AudioStream" uid="uid://c4wr0x6qo6ti2" path="res://assets/enemy_block.ogg" id="7_ndljm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55yxc"]
+atlas = ExtResource("3_ailmk")
+region = Rect2(40, 24, 8, 8)
+
+[sub_resource type="Resource" id="Resource_hvjk8"]
+script = ExtResource("4_v8o1x")
+number = "6"
+icon = SubResource("AtlasTexture_55yxc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvpip"]
+atlas = ExtResource("3_ailmk")
+region = Rect2(16, 24, 8, 8)
+
+[sub_resource type="Resource" id="Resource_bqrq0"]
+script = ExtResource("4_v8o1x")
+number = ""
+icon = SubResource("AtlasTexture_uvpip")
+
+[node name="RatEnemyAI" type="Node"]
+script = ExtResource("1_1o4lo")
+
+[node name="Bite" type="Node" parent="."]
+script = ExtResource("2_kp87k")
+action_name = "Bite"
+type = 1
+intent = SubResource("Resource_hvjk8")
+chance_weight = 1.0
+sound = ExtResource("5_f3m8i")
+
+[node name="Scurry" type="Node" parent="."]
+script = ExtResource("6_10cmh")
+action_name = "Scurry"
+type = 1
+intent = SubResource("Resource_bqrq0")
+chance_weight = 1.0
+sound = ExtResource("7_ndljm")

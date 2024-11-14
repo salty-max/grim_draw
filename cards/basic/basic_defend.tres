@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cyyx3jqcpf4bw"]
+
+[ext_resource type="Texture2D" uid="uid://cpi4ahxcup26f" path="res://cards/basic/basic_defend.png" id="1_0ft1j"]
+[ext_resource type="Script" path="res://cards/basic/basic_defend.gd" id="1_heqwg"]
+
+[resource]
+script = ExtResource("1_heqwg")
+id = "basic_defend"
+name = "Defend"
+type = 1
+target = 0
+archetype = 0
+cost = 1
+icon = ExtResource("1_0ft1j")
+tooltip_text = "Gain [color=\"#0000ff\"]5[/color] Block"

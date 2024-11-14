@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dllegvfcxlys6"]
+
+[ext_resource type="Texture2D" uid="uid://cn0yktnu82r82" path="res://cards/basic/basic_strike.png" id="1_m65ft"]
+[ext_resource type="Script" path="res://cards/basic/basic_strike.gd" id="2_p5xtk"]
+[ext_resource type="AudioStream" uid="uid://d2pi7n4am60k" path="res://assets/axe.ogg" id="3_t0bmi"]
+
+[resource]
+script = ExtResource("2_p5xtk")
+id = "basic_strike"
+name = "Strike"
+type = 0
+target = 1
+archetype = 0
+cost = 1
+icon = ExtResource("1_m65ft")
+tooltip_text = "Deal [color=\"#ff0000\"]6[/color] damage to an enemy"
+sound = ExtResource("3_t0bmi")
