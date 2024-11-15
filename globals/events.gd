@@ -1,5 +1,7 @@
 extends Node
 
+@warning_ignore("unused_signal")
+
 # Card-related events
 signal card_drag_started(card_ui: CardUI)
 signal card_drag_ended(card_ui: CardUI)
@@ -24,3 +26,19 @@ signal enemies_turn_ended
 
 # Battle-related events
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
+signal battle_won
+
+# Map-related events
+signal map_exited
+
+# Shop-related events
+signal shop_exited
+
+# Campfire-related events
+signal campfire_exited
+
+# Rewards-related events
+signal rewards_exited
+
+# TreasureRoom-related events
+signal treasure_room_exited

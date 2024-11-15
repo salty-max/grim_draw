@@ -4,8 +4,16 @@ signal stats_changed
 
 const MAX_BLOCK := 999
 
-@export var max_health := 1
+@export_group("Meta Data")
+@export var name: String
+@export var description: String
+
+@export_group("Visuals")
 @export var art: SpriteFrames
+
+@export_group("Gameplay Data")
+@export var max_health := 1
+
 
 var health: int: set = set_health
 var block: int :set = set_block

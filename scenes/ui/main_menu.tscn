@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3q0p4wm6tchy"]
+
+[ext_resource type="Texture2D" uid="uid://bf6qomb10ir47" path="res://assets/lofi_horror_scenes.png" id="1_hgu6a"]
+[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_ploh8"]
+[ext_resource type="SpriteFrames" uid="uid://dtju3hkjuknjt" path="res://characters/rogue/rogue_sprite_frames.tres" id="2_05gg3"]
+[ext_resource type="SpriteFrames" uid="uid://cgefdhr7aw6jj" path="res://characters/warrior/warrior_sprite_frames.tres" id="2_5874x"]
+[ext_resource type="AudioStream" uid="uid://bxvvf6vwv66xo" path="res://assets/8_bit_iced_village_lofi.mp3" id="2_bp7vb"]
+[ext_resource type="SpriteFrames" uid="uid://byd1sc0yuqf6e" path="res://characters/mage/mage_sprite_frames.tres" id="3_wpsmf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufusq"]
+atlas = ExtResource("1_hgu6a")
+region = Rect2(0, 0, 240, 40)
+
+[sub_resource type="LabelSettings" id="LabelSettings_adnba"]
+font_size = 18
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ploh8")
+music = ExtResource("2_bp7vb")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CastleFlavor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -341.0
+offset_right = 139.0
+offset_bottom = 80.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_ufusq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = -19.0
+offset_top = 8.0
+offset_right = 133.0
+offset_bottom = 33.0
+theme_override_constants/outline_size = 0
+text = "GrimDraw"
+label_settings = SubResource("LabelSettings_adnba")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = 10.0
+offset_right = 104.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+disabled = true
+text = "Continue"
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "New Game"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+text = "Exit"
+
+[node name="MageSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(100, 77)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("3_wpsmf")
+flip_h = true
+
+[node name="RogueSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(77, 92)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_05gg3")
+flip_h = true
+
+[node name="WarriorSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(51, 109)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_5874x")
+flip_h = true
+
+[connection signal="pressed" from="VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

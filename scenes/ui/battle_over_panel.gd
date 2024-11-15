@@ -13,7 +13,7 @@ enum Type {
 
 
 func _ready() -> void:
-	continue_button.pressed.connect(get_tree().quit)
+	continue_button.pressed.connect(func(): Events.battle_won.emit())
 	restart_button.pressed.connect(get_tree().reload_current_scene)
 	Events.battle_over_screen_requested.connect(show_screen)
 	

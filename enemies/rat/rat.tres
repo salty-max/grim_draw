@@ -7,5 +7,7 @@
 [resource]
 script = ExtResource("1_prwly")
 ai = ExtResource("1_30wgy")
-max_health = 20
+name = "Rat"
+description = "A sneaky scavenger always hungry for trouble"
 art = ExtResource("1_iiuqf")
+max_health = 20

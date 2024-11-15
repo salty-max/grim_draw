@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://cw33kf2c2aovf"]
+
+[ext_resource type="SpriteFrames" uid="uid://byd1sc0yuqf6e" path="res://characters/mage/mage_sprite_frames.tres" id="1_epjgi"]
+[ext_resource type="Script" path="res://resources/character_stats.gd" id="1_qiaol"]
+[ext_resource type="Resource" uid="uid://ddd28dnfk10cd" path="res://characters/warrior/warrior_starting_deck.tres" id="3_b4egw"]
+
+[resource]
+script = ExtResource("1_qiaol")
+starting_deck = ExtResource("3_b4egw")
+cards_per_turn = 4
+max_mana = 4
+name = "Mage"
+description = "Enjoys blowing things up with style"
+art = ExtResource("1_epjgi")
+max_health = 20

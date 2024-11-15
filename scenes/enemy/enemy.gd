@@ -5,10 +5,10 @@ const WHITE_SPRITE_MATERIAL := preload("res://globals/white_sprite.tres")
 
 @export var stats: EnemyStats : set = set_enemy_stats
 
-@onready var sprite_2d: AnimatedSprite2D = $Sprite2D as AnimatedSprite2D
-@onready var arrow: Sprite2D = $Arrow as Sprite2D
-@onready var stats_ui: StatsUI = $StatsUI as StatsUI
-@onready var intent_ui: IntentUI = $IntentUI as IntentUI
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var arrow: Sprite2D = $Arrow
+@onready var stats_ui: StatsUI = $StatsUI
+@onready var intent_ui: IntentUI = $IntentUI
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action

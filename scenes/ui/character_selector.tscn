@@ -1,0 +1,207 @@
+[gd_scene load_steps=10 format=3 uid="uid://by6grxnosch86"]
+
+[ext_resource type="Script" path="res://scenes/ui/character_selector.gd" id="1_17nxq"]
+[ext_resource type="Resource" uid="uid://df0751sjd58ia" path="res://scenes/run/run_startup.tres" id="2_qjb0y"]
+[ext_resource type="Texture2D" uid="uid://bf6qomb10ir47" path="res://assets/lofi_horror_scenes.png" id="3_pn5rf"]
+[ext_resource type="SpriteFrames" uid="uid://byd1sc0yuqf6e" path="res://characters/mage/mage_sprite_frames.tres" id="4_cum0f"]
+[ext_resource type="SpriteFrames" uid="uid://dtju3hkjuknjt" path="res://characters/rogue/rogue_sprite_frames.tres" id="5_dpatt"]
+[ext_resource type="SpriteFrames" uid="uid://cgefdhr7aw6jj" path="res://characters/warrior/warrior_sprite_frames.tres" id="6_iepuw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufusq"]
+atlas = ExtResource("3_pn5rf")
+region = Rect2(0, 0, 240, 40)
+
+[sub_resource type="LabelSettings" id="LabelSettings_adnba"]
+font_size = 12
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_qef1i"]
+
+[node name="CharacterSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_17nxq")
+run_startup = ExtResource("2_qjb0y")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CastleFlavor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -341.0
+offset_right = 139.0
+offset_bottom = 80.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_ufusq")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 161.0
+offset_bottom = 46.0
+theme_override_constants/outline_size = 0
+text = "Who should enter
+the dungeon?"
+label_settings = SubResource("LabelSettings_adnba")
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+
+[node name="CharacterButtonsContainer" type="HBoxContainer" parent="HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="WarriorButton" type="Button" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_qef1i")
+icon_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/WarriorButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="WarriorSprite" type="AnimatedSprite2D" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/WarriorButton/BoxContainer"]
+unique_name_in_owner = true
+sprite_frames = ExtResource("6_iepuw")
+
+[node name="RogueButton" type="Button" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qef1i")
+icon_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/RogueButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="RogueSprite" type="AnimatedSprite2D" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/RogueButton/BoxContainer"]
+unique_name_in_owner = true
+sprite_frames = ExtResource("5_dpatt")
+
+[node name="MageButton" type="Button" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+button_group = SubResource("ButtonGroup_qef1i")
+icon_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/MageButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+vertical = true
+
+[node name="MageSprite" type="AnimatedSprite2D" parent="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/MageButton/BoxContainer"]
+unique_name_in_owner = true
+sprite_frames = ExtResource("4_cum0f")
+
+[node name="StartRunButton" type="Button" parent="HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+size_flags_vertical = 4
+text = "Embark!"
+
+[node name="DetailsPanel" type="Panel" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer2/DetailsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ClassTitle" type="Label" parent="HBoxContainer2/DetailsPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Class name"
+vertical_alignment = 1
+
+[node name="ClassDescription" type="Label" parent="HBoxContainer2/DetailsPanel/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Class description
+Lorem ipsum dolor sit amet"
+autowrap_mode = 2
+
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/WarriorButton" to="." method="_on_warrior_button_pressed"]
+[connection signal="toggled" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/WarriorButton" to="." method="_on_warrior_button_toggled"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/RogueButton" to="." method="_on_rogue_button_pressed"]
+[connection signal="toggled" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/RogueButton" to="." method="_on_rogue_button_toggled"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/MageButton" to="." method="_on_mage_button_pressed"]
+[connection signal="toggled" from="HBoxContainer2/VBoxContainer/CharacterButtonsContainer/MageButton" to="." method="_on_mage_button_toggled"]
+[connection signal="pressed" from="HBoxContainer2/VBoxContainer/StartRunButton" to="." method="_on_start_run_button_pressed"]

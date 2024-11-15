@@ -7,9 +7,7 @@ func play(source: AudioStream, single = false) -> void:
 	if single:
 		stop()
 	
-	for player in get_children():
-		player = player as AudioStreamPlayer
-		
+	for player: AudioStreamPlayer in get_children():
 		if not player.playing:
 			player.stream = source
 			player.play()
@@ -17,7 +15,6 @@ func play(source: AudioStream, single = false) -> void:
 			
 			
 func stop() -> void:
-	for player in get_children():
-		player = player as AudioStreamPlayer
+	for player: AudioStreamPlayer in get_children():
 		player.stop()
 	
