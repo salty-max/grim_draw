@@ -60,7 +60,6 @@ func update_enemy() -> void:
 		await ready
 		
 	sprite_2d.sprite_frames = stats.art
-	print(sprite_2d.sprite_frames, stats.art)
 	arrow.position = Vector2.RIGHT * ARROW_OFFSET
 	setup_ai()
 	update_stats()

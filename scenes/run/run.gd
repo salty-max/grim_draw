@@ -11,7 +11,10 @@ const TREASURE_ROOM_SCENE = preload("res://scenes/treasure_room/treasure_room.ts
 @export var run_startup: RunStartup
 
 @onready var current_view: Node = $CurrentView
-@onready var debug_buttons: MarginContainer = $DebugButtons
+@onready var deck_button: CardPileOpener = %DeckButton
+@onready var deck_view: CardPileView = %DeckView
+# TODO: Remove debug buttons
+@onready var debug_buttons: MarginContainer = $DebugLayer/DebugButtons
 @onready var map_button: Button = %MapButton
 @onready var battle_button: Button = %BattleButton
 @onready var shop_button: Button = %ShopButton
@@ -25,7 +28,6 @@ var character: CharacterStats
 func _ready() -> void:		
 	if not run_startup:
 		return
-	print(run_startup.picked_character)
 	match run_startup.type:
 		RunStartup.Type.NEW_RUN:
 			character = run_startup.picked_character.create_instance()
@@ -41,6 +43,7 @@ func _input(event: InputEvent) -> void:
 		
 func _start_run() -> void:
 	_setup_event_connections()
+	_setup_top_bar()
 	print("TODO: procedurally generate map")
 	
 	
@@ -50,6 +53,12 @@ func _change_view(scene: PackedScene) -> void:
 		
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
+	
+	
+func _setup_top_bar() -> void:
+	deck_button.card_pile = character.deck
+	deck_view.card_pile = character.deck
+	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
 	
 	
 func _setup_event_connections() -> void:

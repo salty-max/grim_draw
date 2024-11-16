@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://duhyv6h2rigtx"]
+[gd_scene load_steps=6 format=3 uid="uid://duhyv6h2rigtx"]
 
 [ext_resource type="PackedScene" uid="uid://c4g2iil4ce0uk" path="res://scenes/map/map.tscn" id="1_4wbri"]
 [ext_resource type="Script" path="res://scenes/run/run.gd" id="1_i0237"]
 [ext_resource type="Resource" uid="uid://df0751sjd58ia" path="res://scenes/run/run_startup.tres" id="2_reh8r"]
+[ext_resource type="PackedScene" uid="uid://csdr1yc4swxoy" path="res://scenes/ui/card_pile_opener.tscn" id="4_tjhsa"]
+[ext_resource type="PackedScene" uid="uid://b1o2mqogf72a0" path="res://scenes/ui/card_pile_view.tscn" id="5_4ilfl"]
 
 [node name="Run" type="Node"]
 script = ExtResource("1_i0237")
@@ -12,49 +14,109 @@ run_startup = ExtResource("2_reh8r")
 
 [node name="CurrentView" type="Node" parent="."]
 
-[node name="DebugButtons" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="DebugLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="DebugButtons" type="MarginContainer" parent="DebugLayer"]
+visible = false
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 64.0
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DebugButtons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DebugLayer/DebugButtons"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="MapButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="MapButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Map"
 
-[node name="BattleButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="BattleButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Battle"
 
-[node name="ShopButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="ShopButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Shop"
 
-[node name="RewardsButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="RewardsButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Rewards"
 
-[node name="CampfireButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="CampfireButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Campfire"
 
-[node name="TreasureRoomButton" type="Button" parent="DebugButtons/VBoxContainer"]
+[node name="TreasureRoomButton" type="Button" parent="DebugLayer/DebugButtons/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 text = "Treasure Room"
+
+[node name="TopBar" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="Background" type="ColorRect" parent="TopBar"]
+custom_minimum_size = Vector2(0, 22)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.564706)
+
+[node name="MarginContainer" type="MarginContainer" parent="TopBar"]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="BarItems" type="HBoxContainer" parent="TopBar/MarginContainer"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="Placeholder" type="Control" parent="TopBar/MarginContainer/BarItems"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DeckButton" parent="TopBar/MarginContainer/BarItems" node_paths=PackedStringArray("counter") instance=ExtResource("4_tjhsa")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+counter = NodePath("DeckCounter")
+
+[node name="DeckCounter" type="Label" parent="TopBar/MarginContainer/BarItems/DeckButton"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -7.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_vertical = 0
+text = "52"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DeckView" parent="TopBar" instance=ExtResource("5_4ilfl")]
+unique_name_in_owner = true
+visible = false
