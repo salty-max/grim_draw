@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="CharacterStats" load_steps=4 format=3 uid="uid://cia62ldqhhw1a"]
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=5 format=3 uid="uid://cia62ldqhhw1a"]
 
 [ext_resource type="Script" path="res://resources/character_stats.gd" id="1_gettn"]
 [ext_resource type="SpriteFrames" uid="uid://cgefdhr7aw6jj" path="res://characters/warrior/warrior_sprite_frames.tres" id="1_i6sfs"]
+[ext_resource type="Resource" uid="uid://b23tnbbyv2a3v" path="res://characters/warrior/warrior_draftables.tres" id="2_4aba3"]
 [ext_resource type="Resource" uid="uid://ddd28dnfk10cd" path="res://characters/warrior/warrior_starting_deck.tres" id="3_u7kc4"]
 
 [resource]
 script = ExtResource("1_gettn")
 starting_deck = ExtResource("3_u7kc4")
+draftables = ExtResource("2_4aba3")
 cards_per_turn = 4
 max_mana = 3
 name = "Warrior"

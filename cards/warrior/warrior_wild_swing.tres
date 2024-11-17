@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://biptmj2d1h17f"]
+
+[ext_resource type="Texture2D" uid="uid://b0j72xh4542nw" path="res://cards/warrior/warrior_wild_swing.png" id="1_8iymq"]
+[ext_resource type="Script" path="res://cards/warrior/warrior_wild_swing.gd" id="2_yfmjl"]
+[ext_resource type="AudioStream" uid="uid://d2pi7n4am60k" path="res://assets/axe.ogg" id="3_ecei6"]
+
+[resource]
+script = ExtResource("2_yfmjl")
+id = "warrior_wild_swing"
+name = "Wild Swing"
+type = 0
+target = 2
+archetype = 1
+rarity = 1
+cost = 2
+icon = ExtResource("1_8iymq")
+tooltip_text = "Deal [color=\"ff0000\"]8[/color] damage to 2 random enemies"
+sound = ExtResource("3_ecei6")

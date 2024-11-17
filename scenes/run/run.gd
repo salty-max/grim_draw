@@ -4,7 +4,7 @@ extends Node
 const BATTLE_SCENE = preload("res://scenes/battle/battle.tscn")
 const CAMPFIRE_SCENE = preload("res://scenes/campfire/campfire.tscn")
 const MAP_SCENE = preload("res://scenes/map/map.tscn")
-const REWARDS_SCENE = preload("res://scenes/rewards/rewards.tscn")
+const BATTLE_REWARDS_SCENE = preload("res://scenes/battle_rewards/battle_rewards.tscn")
 const SHOP_SCENE = preload("res://scenes/shop/shop.tscn")
 const TREASURE_ROOM_SCENE = preload("res://scenes/treasure_room/treasure_room.tscn")
 
@@ -66,7 +66,7 @@ func _setup_top_bar() -> void:
 	
 	
 func _setup_event_connections() -> void:
-	Events.battle_won.connect(_change_view.bind(REWARDS_SCENE))
+	Events.battle_won.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
 	Events.rewards_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.campfire_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.treasure_room_exited.connect(_change_view.bind(MAP_SCENE))
@@ -76,7 +76,7 @@ func _setup_event_connections() -> void:
 	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
 	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
 	map_button.pressed.connect(_change_view.bind(MAP_SCENE))
-	rewards_button.pressed.connect(_change_view.bind(REWARDS_SCENE))
+	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_room_button.pressed.connect(_change_view.bind(TREASURE_ROOM_SCENE))
 	

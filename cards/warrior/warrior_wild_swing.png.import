@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6136jr4joq1k"
-path="res://.godot/imported/gold.png-09fb73619791e1dbcf26d16d5d0f2d20.ctex"
+uid="uid://b0j72xh4542nw"
+path="res://.godot/imported/warrior_wild_swing.png-121d09d2fb8c30f1e698ea6a1777a2d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gold.png"
-dest_files=["res://.godot/imported/gold.png-09fb73619791e1dbcf26d16d5d0f2d20.ctex"]
+source_file="res://cards/warrior/warrior_wild_swing.png"
+dest_files=["res://.godot/imported/warrior_wild_swing.png-121d09d2fb8c30f1e698ea6a1777a2d6.ctex"]
 
 [params]
 
