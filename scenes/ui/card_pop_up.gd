@@ -3,6 +3,9 @@ extends Control
 
 const CARD_MENU_UI_SCENE := preload("res://scenes/ui/card_menu_ui.tscn")
 
+@export var bg_color: Color = Color("00000090")
+
+@onready var background: ColorRect = $Background
 @onready var pop_up_card: CenterContainer = %PopUpCard
 @onready var card_title: Label = %CardTitle
 @onready var card_description: RichTextLabel = %CardDescription
@@ -11,6 +14,8 @@ const CARD_MENU_UI_SCENE := preload("res://scenes/ui/card_menu_ui.tscn")
 func _ready() -> void:
 	for card: CardMenuUI in pop_up_card.get_children():
 		card.queue_free()
+		
+	background.color = bg_color
 
 
 func _on_gui_input(event: InputEvent) -> void:

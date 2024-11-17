@@ -50,12 +50,14 @@ func _start_run() -> void:
 	print("TODO: procedurally generate map")
 	
 	
-func _change_view(scene: PackedScene) -> void:
+func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 		
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
+	
+	return new_view
 	
 	
 func _setup_top_bar() -> void:
@@ -66,7 +68,7 @@ func _setup_top_bar() -> void:
 	
 	
 func _setup_event_connections() -> void:
-	Events.battle_won.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
+	Events.battle_won.connect(_on_battle_won)
 	Events.rewards_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.campfire_exited.connect(_change_view.bind(MAP_SCENE))
 	Events.treasure_room_exited.connect(_change_view.bind(MAP_SCENE))
@@ -79,6 +81,16 @@ func _setup_event_connections() -> void:
 	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_room_button.pressed.connect(_change_view.bind(TREASURE_ROOM_SCENE))
+	
+	
+func _on_battle_won() -> void:
+	var reward_scene := _change_view(BATTLE_REWARDS_SCENE) as BattleRewards
+	reward_scene.run_stats = stats
+	reward_scene.character_stats = character
+	
+	# TODO: Replace this with real battle encounter data
+	reward_scene.add_gold_reward(77)
+	reward_scene.add_card_reward()
 	
 	
 func _on_map_exited() -> void:
