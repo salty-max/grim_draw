@@ -13,6 +13,7 @@ const TREASURE_ROOM_SCENE = preload("res://scenes/treasure_room/treasure_room.ts
 @onready var current_view: Node = $CurrentView
 @onready var deck_button: CardPileOpener = %DeckButton
 @onready var deck_view: CardPileView = %DeckView
+@onready var gold_ui: GoldUI = %GoldUI
 # TODO: Remove debug buttons
 @onready var debug_buttons: MarginContainer = $DebugLayer/DebugButtons
 @onready var map_button: Button = %MapButton
@@ -23,6 +24,7 @@ const TREASURE_ROOM_SCENE = preload("res://scenes/treasure_room/treasure_room.ts
 @onready var treasure_room_button: Button = %TreasureRoomButton
 
 var character: CharacterStats
+var stats: RunStats
 
 
 func _ready() -> void:		
@@ -42,6 +44,7 @@ func _input(event: InputEvent) -> void:
 		
 		
 func _start_run() -> void:
+	stats = RunStats.new()
 	_setup_event_connections()
 	_setup_top_bar()
 	print("TODO: procedurally generate map")
@@ -56,6 +59,7 @@ func _change_view(scene: PackedScene) -> void:
 	
 	
 func _setup_top_bar() -> void:
+	gold_ui.run_stats = stats
 	deck_button.card_pile = character.deck
 	deck_view.card_pile = character.deck
 	deck_button.pressed.connect(deck_view.show_current_view.bind("Deck"))
