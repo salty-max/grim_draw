@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bgamfr4ucwd1m"]
+
+[ext_resource type="Texture2D" uid="uid://bojib53rej6fa" path="res://cards/warrior/warrior_big_slam.png" id="1_rqu28"]
+[ext_resource type="Script" path="res://cards/warrior/warrior_big_slam.gd" id="2_pc7cf"]
+[ext_resource type="AudioStream" uid="uid://d2pi7n4am60k" path="res://assets/axe.ogg" id="3_xvvs3"]
+
+[resource]
+script = ExtResource("2_pc7cf")
+id = "warrior_big_slam"
+name = "Big Slam"
+type = 0
+target = 1
+archetype = 1
+rarity = 1
+cost = 2
+icon = ExtResource("1_rqu28")
+tooltip_text = "Deal [color=\"ff0000\"]10[/color] damage and apply 2 [color=\"ffdf00\"]Exposed[/color]"
+sound = ExtResource("3_xvvs3")

@@ -8,7 +8,7 @@ func enter() -> void:
 		card_ui.tween.kill()
 		
 	if card_ui.card:
-		card_ui.set_stylebox(card_ui.BASE_STYLEBOX)	
+		card_ui.card_visuals.set_stylebox(card_ui.BASE_STYLEBOX)	
 	
 	card_ui.reparent_requested.emit(card_ui)
 	card_ui.pivot_offset = Vector2.ZERO
@@ -26,7 +26,7 @@ func on_gui_input(event: InputEvent) -> void:
 func on_mouse_entered() -> void:
 	if not card_ui.is_playable or card_ui.is_disabled:
 		return
-	card_ui.set_stylebox(card_ui.HOVER_STYLEBOX)
+	card_ui.card_visuals.set_stylebox(card_ui.HOVER_STYLEBOX)
 	card_ui.global_position += Vector2.UP * 2
 	Events.card_tooltip_requested.emit(card_ui.card.icon, card_ui.card.name, card_ui.card.tooltip_text)
 	
@@ -34,6 +34,6 @@ func on_mouse_entered() -> void:
 func on_mouse_exited() -> void:
 	if not card_ui.is_playable or card_ui.is_disabled:
 		return
-	card_ui.set_stylebox(card_ui.BASE_STYLEBOX)
+	card_ui.card_visuals.set_stylebox(card_ui.BASE_STYLEBOX)
 	card_ui.global_position += Vector2.DOWN * 2
 	Events.tooltip_hide_requested.emit()

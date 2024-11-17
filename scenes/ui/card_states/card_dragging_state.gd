@@ -9,7 +9,7 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 		
-	card_ui.set_stylebox(card_ui.DRAGGING_STYLEBOX)
+	card_ui.card_visuals.set_stylebox(card_ui.DRAGGING_STYLEBOX)
 	Events.card_drag_started.emit(card_ui)
 	
 	is_minimum_drag_time_elapsed = false

@@ -9,9 +9,7 @@ const DRAGGING_STYLEBOX := preload("res://scenes/ui/card_dragging_stylebox.tres"
 @export var card: Card : set = _set_card
 @export var char_stats: CharacterStats : set = _set_char_stats
 
-@onready var panel: Panel = $Panel
-@onready var cost: Label = $Cost
-@onready var icon: TextureRect = $Icon
+@onready var card_visuals: CardVisuals = $CardVisuals
 @onready var card_state_machine: CardStateMachine = $CardStateMachine
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var targets: Array[Node] = []
@@ -40,19 +38,17 @@ func _set_card(value: Card) -> void:
 		await ready
 		
 	card = value
-	set_stylebox(BASE_STYLEBOX)
-	cost.text = str(card.cost)
-	icon.texture = card.icon
+	card_visuals.card = card
 	
 	
 func _set_is_playable(value: bool) -> void:
 	is_playable = value
 	if not is_playable:
-		cost.add_theme_color_override("font_color", Color.RED)
-		icon.modulate = Color(1, 1, 1, 0.5)
+		card_visuals.cost.add_theme_color_override("font_color", Color.RED)
+		card_visuals.icon.modulate = Color(1, 1, 1, 0.5)
 	else:
-		cost.remove_theme_color_override("font_color")
-		icon.modulate = Color(1, 1, 1, 1)
+		card_visuals.cost.remove_theme_color_override("font_color")
+		card_visuals.icon.modulate = Color(1, 1, 1, 1)
 	
 	
 func _set_char_stats(value: CharacterStats) -> void:
@@ -102,12 +98,6 @@ func play() -> void:
 		
 	card.play(targets, char_stats)
 	queue_free()
-	
-	
-func set_stylebox(_stylebox: StyleBoxFlat) -> void:
-	var stylebox = _stylebox.duplicate()
-	stylebox.set("bg_color", card.get_archetype_color())
-	panel.set("theme_override_styles/panel", stylebox)	
 	
 
 func animate_to_position(new_position: Vector2, duration: float) -> void:

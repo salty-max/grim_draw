@@ -8,7 +8,7 @@ func enter() -> void:
 	var offset := Vector2(card_ui.parent.size.x / 2, -card_ui.size.y / 2)
 	offset.x -= card_ui.size.x / 2
 	
-	card_ui.set_stylebox(card_ui.BASE_STYLEBOX)
+	card_ui.card_visuals.set_stylebox(card_ui.BASE_STYLEBOX)
 	
 	card_ui.animate_to_position(card_ui.parent.global_position + offset, 0.2)
 	card_ui.drop_point_detector.monitoring = false

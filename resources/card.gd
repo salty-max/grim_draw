@@ -20,12 +20,25 @@ enum Archetype {
 	MAGE
 }
 
+enum Rarity {
+	COMMON,
+	UNCOMMON,
+	RARE
+}
+
+const RARITY_COLORS := {
+	Rarity.COMMON: Color.GRAY,
+	Rarity.UNCOMMON: Color.CORNFLOWER_BLUE,
+	Rarity.RARE: Color.GOLD
+}
+
 @export_group("Card Attributes")
 @export var id: String
 @export var name: String
 @export var type: Type
 @export var target: Target
 @export var archetype: Archetype
+@export var rarity: Rarity
 @export var cost: int
 
 @export_group("Card Visuals")
@@ -80,6 +93,6 @@ func get_archetype_color() -> Color:
 		Archetype.MAGE:
 			color = Color("#32799a")
 		_:
-			color = Color("#aaaaaa")
+			color = Color("#888888")
 			
 	return color

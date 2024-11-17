@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://2tu4afbweci0"]
+
+[ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="1_00wp3"]
+[ext_resource type="Script" path="res://scenes/ui/card_visuals.gd" id="2_g6o85"]
+[ext_resource type="StyleBox" uid="uid://bhm4bbvvx2st" path="res://scenes/ui/card_base_stylebox.tres" id="2_qgc5m"]
+[ext_resource type="Texture2D" uid="uid://cn0yktnu82r82" path="res://cards/basic/basic_strike.png" id="3_0bdcd"]
+[ext_resource type="Resource" uid="uid://dllegvfcxlys6" path="res://cards/basic/basic_strike.tres" id="3_jcg25"]
+[ext_resource type="Texture2D" uid="uid://bvwh8dfqlxw6r" path="res://assets/rarity.png" id="4_dv5fr"]
+
+[node name="CardVisuals" type="Control"]
+custom_minimum_size = Vector2(24, 30)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_00wp3")
+script = ExtResource("2_g6o85")
+card = ExtResource("3_jcg25")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_qgc5m")
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 8.0
+offset_bottom = 9.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -20.0
+offset_right = 8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_0bdcd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rarity" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -9.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 9.0
+grow_horizontal = 0
+texture = ExtResource("4_dv5fr")
+expand_mode = 1
+stretch_mode = 5
