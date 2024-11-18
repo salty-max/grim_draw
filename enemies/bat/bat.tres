@@ -10,4 +10,4 @@ ai = ExtResource("1_21kin")
 name = "Bat"
 description = "A shrieking menace of the dark"
 art = ExtResource("1_pg8if")
-max_health = 15
+max_health = 1
