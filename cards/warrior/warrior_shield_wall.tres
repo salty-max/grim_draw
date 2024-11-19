@@ -10,6 +10,7 @@ name = "Shield Wall"
 type = 1
 target = 0
 archetype = 1
+rarity = 0
 cost = 3
 icon = ExtResource("1_l5ahq")
 tooltip_text = "Gain [color=\"#0000ff\"]20[/color] Block"

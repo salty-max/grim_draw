@@ -96,22 +96,29 @@ func _setup_event_connections() -> void:
 	treasure_room_button.pressed.connect(_change_view.bind(TREASURE_ROOM_SCENE))
 	
 	
+func _on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	battle_scene.char_stats = character
+	battle_scene.battle_stats = room.battle_stats
+	battle_scene.start_battle()	
+
+	
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARDS_SCENE) as BattleRewards
+	
 	reward_scene.run_stats = stats
 	reward_scene.character_stats = character
 	
-	# TODO: Replace this with real battle encounter data
-	reward_scene.add_gold_reward(77)
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_card_reward()
 	
 	
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.BATTLE:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.BOSS:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.CAMPFIRE:
 			_change_view(CAMPFIRE_SCENE)
 		Room.Type.SHOP:

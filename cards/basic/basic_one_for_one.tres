@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b5s8t7qsm1qgb"]
+
+[ext_resource type="Texture2D" uid="uid://b5kwin1ilsbe5" path="res://cards/basic/basic_one_for_one.png" id="1_406a4"]
+[ext_resource type="Script" path="res://cards/basic/basic_one_for_one.gd" id="2_hgcga"]
+
+[resource]
+script = ExtResource("2_hgcga")
+id = "basic_one_for_one"
+name = "One for One"
+type = 1
+target = 0
+archetype = 0
+rarity = 0
+cost = 0
+icon = ExtResource("1_406a4")
+tooltip_text = "Draw [color=\"0000ff\"]1[/color] card and discard  [color=\"0000ff\"]1[/color] random card"

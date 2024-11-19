@@ -10,6 +10,7 @@ name = "Defend"
 type = 1
 target = 0
 archetype = 0
+rarity = 0
 cost = 1
 icon = ExtResource("1_0ft1j")
 tooltip_text = "Gain [color=\"#0000ff\"]5[/color] Block"

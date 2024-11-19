@@ -1,0 +1,16 @@
+class_name BattleStats
+extends Resource
+
+const MAX_TIER := 2
+
+@export_range(0, MAX_TIER) var battle_tier: int
+@export_range(0.0, 10.0) var weight: float
+@export var gold_reward_min: int
+@export var gold_reward_max: int
+@export var enemies: PackedScene
+
+var accumulated_weight := 0.0
+
+
+func roll_gold_reward() -> int:
+	return randi_range(gold_reward_min, gold_reward_max)

@@ -14,6 +14,8 @@ signal card_tooltip_requested(card: Card)
 signal tooltip_hide_requested
 
 # Player-related events
+signal player_card_draw_requested(amount: int)
+signal player_card_discard_requested(amount: int)
 signal player_hand_drawn
 signal player_hand_discarded
 signal player_turn_ended

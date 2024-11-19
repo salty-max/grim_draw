@@ -13,6 +13,8 @@ const BATTLE_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.5
 const CAMPFIRE_ROOM_WEIGHT := 4.0
 
+@export var battle_stats_pool: BattleStatsPool
+
 var random_room_type_weights := {
 	Room.Type.BATTLE: 0.0,
 	Room.Type.CAMPFIRE: 0.0,
@@ -30,6 +32,8 @@ func generate_map() -> Array[Array]:
 		var current_col := col
 		for row in FLOORS - 1:
 			current_col = _setup_connections(row, current_col)
+			
+	battle_stats_pool.setup()
 			
 	_setup_boss_room()
 	_setup_random_room_weights()
@@ -129,6 +133,7 @@ func _setup_boss_room() -> void:
 			current_room.next_rooms.append(boss_room)
 			
 	boss_room.type = Room.Type.BOSS
+	boss_room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 	
 	
 func _setup_random_room_weights() -> void:
@@ -143,6 +148,7 @@ func _setup_room_types() -> void:
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.BATTLE
+			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 			
 	# 9th floor rooms are always treasures
 	for room: Room in map_data[MIDDLE_FLOOR_INDEX]:
@@ -183,6 +189,10 @@ func _set_room_randomly(room_to_set: Room) -> void:
 		campfire_on_last_floor = is_campfire and room_to_set.row == FLOORS - 2
 				
 	room_to_set.type = type_candidate
+	
+	if room_to_set.type == Room.Type.BATTLE:
+		var tier_for_room_monsters := 1 if room_to_set.row > 2 else 0
+		room_to_set.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_room_monsters)
 	
 	
 func _get_random_room_type_by_weight() -> Room.Type:

@@ -16,6 +16,8 @@ enum Type {
 @export var position: Vector2
 @export var next_rooms: Array[Room]
 @export var selected := false
+# Only used by BATTLE and BOSS types
+@export var battle_stats: BattleStats
 
 
 func _to_string() -> String:

@@ -10,6 +10,8 @@ var character: CharacterStats
 
 func _ready() -> void:
 	Events.card_played.connect(_on_card_played)
+	Events.player_card_draw_requested.connect(_on_card_draw_requested)
+	Events.player_card_discard_requested.connect(_on_card_discard_requested)
 
 
 func start_battle(char_stats: CharacterStats) -> void:
@@ -59,6 +61,16 @@ func discard_cards() -> void:
 		func(): Events.player_hand_discarded.emit()
 	)
 	
+func discard_n_cards(amount: int) -> void:
+	var tween := create_tween()
+	var hand_card_uis := hand.get_children()
+	hand_card_uis.shuffle()
+	var selected_cards := hand_card_uis.slice(0, amount)
+	for card_ui in selected_cards:
+		tween.tween_callback(character.discard_pile.add_card.bind(card_ui.card))
+		tween.tween_callback(hand.discard_card.bind(card_ui))
+		tween.tween_interval(HAND_DISCARD_INTERVAL)
+	
 	
 func reshuffle_deck_from_discard() -> void:
 	if not character.draw_pile.is_empty():
@@ -72,3 +84,11 @@ func reshuffle_deck_from_discard() -> void:
 		
 func _on_card_played(card: Card) -> void:
 	character.discard_pile.add_card(card)
+	
+	
+func _on_card_draw_requested(amount: int) -> void:
+	draw_cards(amount)
+	
+	
+func _on_card_discard_requested(amount: int) -> void:
+	discard_n_cards(amount)

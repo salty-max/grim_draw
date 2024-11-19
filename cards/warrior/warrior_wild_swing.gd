@@ -6,8 +6,8 @@ func apply_effects(targets: Array[Node]) -> void:
 	damage_effect.sound = sound
 	
 	if targets.size() == 1:
-		damage_effect.execute.bind(targets)
-		damage_effect.execute.bind(targets)
+		damage_effect.execute(targets)
+		damage_effect.execute(targets)
 		return
 	
 	var first_target_index := randi() % targets.size()
@@ -17,4 +17,4 @@ func apply_effects(targets: Array[Node]) -> void:
 		second_target_index = randi() % targets.size()
 	var second_target := targets[second_target_index]
 	
-	damage_effect.execute.bind([first_target, second_target])
+	damage_effect.execute([first_target, second_target])

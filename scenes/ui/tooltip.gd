@@ -7,7 +7,7 @@ class_name Tooltip extends PanelContainer
 @onready var tooltip_title: Label = %TooltipTitle
 
 var tween: Tween
-var is_visible := false
+var is_tooltip_visible := false
 
 
 func _ready() -> void:
@@ -18,7 +18,7 @@ func _ready() -> void:
 	
 	
 func show_tooltip(icon: Texture, title: String, text: String) -> void:
-	is_visible = true
+	is_tooltip_visible = true
 	if tween:
 		tween.kill()
 		
@@ -31,7 +31,7 @@ func show_tooltip(icon: Texture, title: String, text: String) -> void:
 	
 	
 func hide_tooltip() -> void:
-	is_visible = false
+	is_tooltip_visible = false
 	if tween:
 		tween.kill()
 		

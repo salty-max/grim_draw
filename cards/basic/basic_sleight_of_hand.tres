@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bt3q5eui202pg"]
+
+[ext_resource type="Texture2D" uid="uid://bcqs2heo2hr1n" path="res://cards/basic/basic_sleight_of_hand.png" id="1_iuav5"]
+[ext_resource type="Script" path="res://cards/basic/basic_sleight_of_hand.gd" id="2_i5mdo"]
+
+[resource]
+script = ExtResource("2_i5mdo")
+id = "basic_sleight_of_hand"
+name = "Sleight of Hand"
+type = 1
+target = 0
+archetype = 0
+rarity = 0
+cost = 1
+icon = ExtResource("1_iuav5")
+tooltip_text = "Draw [color=\"0000ff\"]1[/color] card"
