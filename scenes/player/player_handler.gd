@@ -51,6 +51,10 @@ func draw_cards(amount: int) -> void:
 	
 	
 func discard_cards() -> void:
+	if hand.get_child_count() == 0:
+		Events.player_hand_discarded.emit()
+		return
+	
 	var tween := create_tween()
 	for card_ui in hand.get_children():
 		tween.tween_callback(character.discard_pile.add_card.bind(card_ui.card))
@@ -62,6 +66,9 @@ func discard_cards() -> void:
 	)
 	
 func discard_n_cards(amount: int) -> void:
+	if hand.get_child_count() == 0:
+		return
+		
 	var tween := create_tween()
 	var hand_card_uis := hand.get_children()
 	hand_card_uis.shuffle()

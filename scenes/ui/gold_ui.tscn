@@ -12,7 +12,7 @@ alignment = 1
 script = ExtResource("1_0wtvo")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(12, 12)
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 texture = ExtResource("1_b22in")
 expand_mode = 1

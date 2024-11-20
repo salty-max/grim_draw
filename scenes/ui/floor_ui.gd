@@ -16,4 +16,4 @@ func set_run_stats(value: RunStats) -> void:
 		
 		
 func _update_floor() -> void:
-	text = "Floor %s" % str(run_stats.current_floor)
+	text = "Floor %s" % str(run_stats.current_floor + 1)

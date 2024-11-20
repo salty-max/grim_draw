@@ -15,6 +15,10 @@ run/main_scene="res://scenes/ui/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://globals/default_bus_layout.tres"
+
 [autoload]
 
 Events="*res://globals/events.gd"
@@ -38,7 +42,7 @@ enemies=""
 
 [gui]
 
-theme/custom="res://main_theme.tres"
+theme/custom="res://globals/main_theme.tres"
 theme/custom_font="res://assets/oryx-simplex.ttf"
 theme/default_font_antialiasing=0
 

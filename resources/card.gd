@@ -92,7 +92,7 @@ func get_archetype_color() -> Color:
 			color = Color("#3d8157")
 		Archetype.MAGE:
 			color = Color("#32799a")
-		_:
+		Archetype.BASIC:
 			color = Color("#888888")
 			
 	return color

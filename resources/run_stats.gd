@@ -25,7 +25,7 @@ func set_gold(value: int) -> void:
 	
 func set_current_floor(value: int) -> void:
 	current_floor = value
-	floor_changed.emit(current_floor)
+	floor_changed.emit()
 	
 func reset_weights() -> void:
 	common_weight = BASE_COMMON_WEIGHT

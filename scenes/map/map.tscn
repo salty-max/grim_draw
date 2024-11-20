@@ -4,11 +4,11 @@
 [ext_resource type="Script" path="res://scenes/map/map_generator.gd" id="2_s7mru"]
 [ext_resource type="Resource" uid="uid://b50wr24yfevot" path="res://battles/battle_stats_pool.tres" id="3_4cnml"]
 
-[sub_resource type="Gradient" id="Gradient_426sw"]
+[sub_resource type="Gradient" id="Gradient_fb6t8"]
 colors = PackedColorArray(0.215686, 0.215686, 0.215686, 1, 0.4, 0.219608, 0.203922, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_fcl75"]
-gradient = SubResource("Gradient_426sw")
+gradient = SubResource("Gradient_fb6t8")
 width = 50
 
 [node name="Map" type="Node2D"]

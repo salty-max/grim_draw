@@ -9,7 +9,7 @@
 script = ExtResource("1_gettn")
 starting_deck = ExtResource("3_u7kc4")
 draftables = ExtResource("2_4aba3")
-cards_per_turn = 4
+cards_per_turn = 5
 max_mana = 3
 name = "Warrior"
 description = "Likes to slice things up"

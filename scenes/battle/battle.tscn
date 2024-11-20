@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://dt5mm8kp3qsdy" path="res://enemies/rat/rat.tres" id="9_pai42"]
 [ext_resource type="Resource" uid="uid://ceafmix0gnm2y" path="res://enemies/bat/bat.tres" id="9_w4cg2"]
 [ext_resource type="PackedScene" uid="uid://mss1g2i3g6sc" path="res://scenes/ui/mana_ui.tscn" id="12_u246f"]
-[ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://main_theme.tres" id="13_cbptx"]
+[ext_resource type="Theme" uid="uid://djjekcshlouv5" path="res://globals/main_theme.tres" id="13_cbptx"]
 [ext_resource type="PackedScene" uid="uid://dkjwgxie263mx" path="res://scenes/ui/tooltip.tscn" id="13_lrhde"]
 [ext_resource type="Script" path="res://scenes/ui/red_flash.gd" id="15_em4mc"]
 [ext_resource type="PackedScene" uid="uid://csdr1yc4swxoy" path="res://scenes/ui/card_pile_opener.tscn" id="17_4ucmx"]
