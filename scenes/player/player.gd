@@ -1,4 +1,5 @@
-class_name Player extends Node2D
+class_name Player
+extends Node2D
 
 const WHITE_SPRITE_MATERIAL := preload("res://globals/white_sprite.tres")
 
@@ -6,11 +7,11 @@ const WHITE_SPRITE_MATERIAL := preload("res://globals/white_sprite.tres")
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 @onready var stats_ui: StatsUI = $StatsUI
+@onready var status_handler: StatusHandler = $StatusHandler
 
 
 func _ready() -> void:
-	sprite_2d.play("default")
-	
+	status_handler.status_owner = self
 
 func set_character_stats(value: CharacterStats) -> void:
 	stats = value

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="InnerStrengthStatus" load_steps=3 format=3 uid="uid://cu8dckr4yn1ht"]
+
+[ext_resource type="Texture2D" uid="uid://cqorv8d4kfckl" path="res://assets/inner_strength.png" id="1_516ve"]
+[ext_resource type="Script" path="res://statuses/inner_strength.gd" id="2_je605"]
+
+[resource]
+script = ExtResource("2_je605")
+id = "inner_strength"
+type = 0
+stack_type = 0
+can_expire = false
+duration = 0
+stacks = 0
+icon = ExtResource("1_516ve")
+description = "TODO"

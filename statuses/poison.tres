@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Status" load_steps=3 format=3 uid="uid://cg5kyqyf1p2ad"]
+
+[ext_resource type="Texture2D" uid="uid://c0rtkb5mntk3v" path="res://assets/poison.png" id="1_sobse"]
+[ext_resource type="Script" path="res://resources/status.gd" id="1_wb5qe"]
+
+[resource]
+script = ExtResource("1_wb5qe")
+id = "poison"
+type = 0
+stack_type = 3
+can_expire = true
+duration = 1
+stacks = 1
+icon = ExtResource("1_sobse")
+description = "At the start of the turn, apply X damage"

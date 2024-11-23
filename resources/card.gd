@@ -40,6 +40,7 @@ const RARITY_COLORS := {
 @export var archetype: Archetype
 @export var rarity: Rarity
 @export var cost: int
+@export var exhausts: bool = false
 
 @export_group("Card Visuals")
 @export var icon: Texture

@@ -10,4 +10,4 @@ ai = ExtResource("1_30wgy")
 name = "Rat"
 description = "A sneaky scavenger always hungry for trouble"
 art = ExtResource("1_iiuqf")
-max_health = 1
+max_health = 20

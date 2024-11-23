@@ -52,4 +52,6 @@ size_flags_vertical = 3
 theme_override_constants/line_separation = 2
 bbcode_enabled = true
 text = "Tooltip description
+Tooltip description
 Tooltip description"
+fit_content = true

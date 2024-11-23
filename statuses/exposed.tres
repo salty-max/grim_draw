@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ExposedStatus" load_steps=3 format=3 uid="uid://g6oryso15icq"]
+
+[ext_resource type="Script" path="res://statuses/exposed.gd" id="1_ift0l"]
+[ext_resource type="Texture2D" uid="uid://dji0025cvxv0l" path="res://assets/exposed.png" id="1_u0d8y"]
+
+[resource]
+script = ExtResource("1_ift0l")
+id = "exposed"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("1_u0d8y")
+description = "Take 25% more damage"

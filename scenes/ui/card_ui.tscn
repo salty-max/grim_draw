@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ui/card_ui.gd" id="2_6yvpf"]
 [ext_resource type="Script" path="res://scenes/ui/card_state_machine.gd" id="3_0p5th"]
 [ext_resource type="PackedScene" uid="uid://2tu4afbweci0" path="res://scenes/ui/card_visuals.tscn" id="3_lbuvy"]
-[ext_resource type="Script" path="res://scenes/ui/card_base_state.gd" id="4_2i7bx"]
+[ext_resource type="Script" path="res://scenes/ui/card_states/card_base_state.gd" id="4_2i7bx"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_clicked_state.gd" id="5_4bdhh"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_dragging_state.gd" id="6_co8je"]
 [ext_resource type="Script" path="res://scenes/ui/card_states/card_released_state.gd" id="7_nv3d0"]

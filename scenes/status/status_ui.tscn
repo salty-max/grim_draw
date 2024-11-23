@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkrg1sybttan"]
+
+[ext_resource type="Script" path="res://scenes/status/status_ui.gd" id="1_b215s"]
+[ext_resource type="Texture2D" uid="uid://c0rtkb5mntk3v" path="res://assets/poison.png" id="1_h0wg6"]
+
+[node name="StatusUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b215s")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_right = 10.0
+offset_bottom = 10.0
+texture = ExtResource("1_h0wg6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Duration" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 15.0
+offset_bottom = 13.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stacks" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 15.0
+offset_bottom = 13.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1

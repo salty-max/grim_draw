@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cjr3w88wrhay4"]
+
+[ext_resource type="Texture2D" uid="uid://cwi3hmlal2ljn" path="res://assets/muscle.png" id="1_ah4ju"]
+[ext_resource type="Script" path="res://statuses/muscle.gd" id="2_wheu3"]
+
+[resource]
+script = ExtResource("2_wheu3")
+id = "muscle"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 2
+icon = ExtResource("1_ah4ju")
+description = "TODO"
